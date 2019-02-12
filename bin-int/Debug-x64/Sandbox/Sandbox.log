@@ -1,3 +1,3 @@
-﻿  Application.cpp
-c:\dev\cpp\whitedonutengine\sandbox\src\application.cpp(7): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Sandbox.vcxproj -> C:\Dev\Cpp\WhiteDonutEngine\bin\Debug-x64\Sandbox\Sandbox.exe
+﻿  SandboxApp.cpp
+  Sandbox.vcxproj -> D:\Dev\whitedonutengine\bin\Debug-x64\Sandbox\Sandbox.exe
+          1 file(s) copied.
