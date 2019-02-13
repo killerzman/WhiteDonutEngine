@@ -1,7 +1,0 @@
-﻿  SandboxApp.cpp
-c:\dev\cpp\whitedonutengine\whitedonutengine\src\wde\log.h(18): warning C4251: 'WDE::Log::s_CoreLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'WDE::Log'
-  c:\dev\cpp\whitedonutengine\whitedonutengine\vendor\spdlog\include\spdlog\logger.h(158): note: see declaration of 'std::shared_ptr<spdlog::logger>'
-c:\dev\cpp\whitedonutengine\whitedonutengine\src\wde\log.h(19): warning C4251: 'WDE::Log::s_ClientLogger': class 'std::shared_ptr<spdlog::logger>' needs to have dll-interface to be used by clients of class 'WDE::Log'
-  c:\dev\cpp\whitedonutengine\whitedonutengine\vendor\spdlog\include\spdlog\logger.h(158): note: see declaration of 'std::shared_ptr<spdlog::logger>'
-  Sandbox.vcxproj -> C:\Dev\Cpp\WhiteDonutEngine\bin\Debug-x64\Sandbox\Sandbox.exe
-          1 file(s) copied.
