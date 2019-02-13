@@ -1,6 +1,6 @@
-#include <WhiteDonutEngine.h>
+#include <WDE.H>
 
-class Sandbox : public WhiteDonutEngine::Application {
+class Sandbox : public WDE::Application {
 public:
 	Sandbox() {
 
@@ -10,6 +10,6 @@ public:
 	}
 };
 
-WhiteDonutEngine::Application* WhiteDonutEngine::CreateApplication() {
+WDE::Application* WDE::CreateApplication() {
 	return new Sandbox();
 }

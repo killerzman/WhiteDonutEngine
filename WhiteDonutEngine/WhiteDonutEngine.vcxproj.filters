@@ -15,21 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\WhiteDonutEngine\Core.h">
+    <ClInclude Include="src\WDE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\WhiteDonutEngine\Application.h">
+    <ClInclude Include="src\WDE\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\WhiteDonutEngine.h">
+    <ClInclude Include="src\WDE\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\WhiteDonutEngine\EntryPoint.h">
+    <ClInclude Include="src\WDE\EntryPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WDE\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\WhiteDonutEngine\Application.cpp">
+    <ClCompile Include="src\WDE\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WDE\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
