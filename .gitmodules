@@ -1,0 +1,3 @@
+[submodule "WhiteDonutEngine/vendor/spdlog"]
+	path = WhiteDonutEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
