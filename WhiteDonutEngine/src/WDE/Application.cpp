@@ -1,4 +1,8 @@
+#include "wdepch.h"
 #include "Application.h"
+
+#include "WDE/Events/ApplicationEvent.h"
+#include "WDE/Log.h"
 
 namespace WDE {
 
@@ -12,10 +16,15 @@ namespace WDE {
 	}
 
 	void Application::Run() {
-		while (true);
+		WindowResizeEvent e(1280, 720);
+		if (e.IsInCategory(EventCategoryApplication))
+		{
+			WDE_TRACE(e);
+		}
+		if (e.IsInCategory(EventCategoryInput))
+		{
+			WDE_TRACE(e);
+		}
 	}
 
-	/*int Application::Numbers() {
-		return 5;
-	}*/
 }

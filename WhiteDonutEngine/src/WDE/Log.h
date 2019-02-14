@@ -1,9 +1,8 @@
 #pragma once
 
-#include <memory>
-
-#include "spdlog/spdlog.h"
 #include "Core.h"
+#include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace WDE {
 

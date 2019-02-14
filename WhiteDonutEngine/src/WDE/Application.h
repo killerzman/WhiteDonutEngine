@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include "Events/Event.h"
 
 namespace WDE {
 	class WDE_API Application
@@ -10,7 +11,6 @@ namespace WDE {
 		virtual ~Application();
 
 		void Run();
-		//int Numbers();
 	};
 	
 	//To be defined in Client

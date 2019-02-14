@@ -1,5 +1,6 @@
 workspace "WhiteDonutEngine"
 	architecture "x64"
+	startproject "Sandbox"
 	
 	configurations
 	{
@@ -14,10 +15,14 @@ project "WhiteDonutEngine"
 	location "WhiteDonutEngine"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 	
+	pchheader "wdepch.h"
+	pchsource "WhiteDonutEngine/src/wdepch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -26,12 +31,12 @@ project "WhiteDonutEngine"
 	
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include"
 	}
 	
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -47,20 +52,24 @@ project "WhiteDonutEngine"
 	
 	filter "configurations:Debug"
 		defines "WDE_DEBUG"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "WDE_RELEASE"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "WDE_DIST"
+		runtime "Release"
 		optimize "On"
 		
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -84,7 +93,6 @@ project "Sandbox"
 	
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -94,12 +102,15 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "WDE_DEBUG"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "WDE_RELEASE"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "WDE_DIST"
+		runtime "Release"
 		optimize "On"

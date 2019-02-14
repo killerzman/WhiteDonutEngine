@@ -13,7 +13,6 @@ int main(int argc, char** argv) {
 	WDE_INFO("Hello! Var={0}" , 5);
 
 	auto app = WDE::CreateApplication();
-	//std::cout << app->Numbers();
 	app->Run();
 	delete app;
 }

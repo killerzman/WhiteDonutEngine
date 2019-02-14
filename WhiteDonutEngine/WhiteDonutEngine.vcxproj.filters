@@ -4,6 +4,9 @@
     <Filter Include="WDE">
       <UniqueIdentifier>{052E880B-7137-887C-FAB2-9E7C66BB937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="WDE\Events">
+      <UniqueIdentifier>{494287FF-35FA-C84C-9E01-A2A88AD8633D}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\WDE.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\WDE\EntryPoint.h">
       <Filter>WDE</Filter>
     </ClInclude>
+    <ClInclude Include="src\WDE\Events\ApplicationEvent.h">
+      <Filter>WDE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WDE\Events\Event.h">
+      <Filter>WDE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WDE\Events\KeyEvent.h">
+      <Filter>WDE\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WDE\Events\MouseEvent.h">
+      <Filter>WDE\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\WDE\Log.h">
       <Filter>WDE</Filter>
     </ClInclude>
+    <ClInclude Include="src\wdepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\WDE\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\WDE\Log.cpp">
       <Filter>WDE</Filter>
     </ClCompile>
+    <ClCompile Include="src\wdepch.cpp" />
   </ItemGroup>
 </Project>
