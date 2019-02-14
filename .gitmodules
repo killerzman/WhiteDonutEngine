@@ -1,3 +1,6 @@
 [submodule "WhiteDonutEngine/vendor/spdlog"]
 	path = WhiteDonutEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "WhiteDonutEngine/vendor/GLFW"]
+	path = WhiteDonutEngine/vendor/GLFW
+	url = https://github.com/killerzman/glfw

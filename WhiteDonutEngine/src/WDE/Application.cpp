@@ -4,10 +4,13 @@
 #include "WDE/Events/ApplicationEvent.h"
 #include "WDE/Log.h"
 
+#include "GLFW/glfw3.h"
+
 namespace WDE {
 
 	Application::Application()
 	{
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 
@@ -15,15 +18,12 @@ namespace WDE {
 	{
 	}
 
-	void Application::Run() {
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
-		{
-			WDE_TRACE(e);
-		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			WDE_TRACE(e);
+	void Application::Run()
+	{
+		while (m_Running) {
+			glClearColor(1, 1, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
 	}
 

@@ -10,7 +10,13 @@ workspace "WhiteDonutEngine"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
-	
+
+-- Include dirs relative to root folder (solution dir)
+IncludeDir = {}
+IncludeDir["GLFW"] = "WhiteDonutEngine/vendor/GLFW/include"
+
+include "WhiteDonutEngine/vendor/GLFW"
+
 project "WhiteDonutEngine"
 	location "WhiteDonutEngine"
 	kind "SharedLib"
@@ -32,7 +38,14 @@ project "WhiteDonutEngine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 	
 	filter "system:windows"

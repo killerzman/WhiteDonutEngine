@@ -35,6 +35,10 @@
       <Filter>WDE</Filter>
     </ClInclude>
     <ClInclude Include="src\wdepch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\WDE\Window.h">
+      <Filter>WDE</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\WDE\Application.cpp">
@@ -44,5 +48,6 @@
       <Filter>WDE</Filter>
     </ClCompile>
     <ClCompile Include="src\wdepch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
