@@ -1,6 +1,5 @@
 workspace "WhiteDonutEngine"
 	architecture "x64"
-	startproject "Sandbox"
 	
 	configurations
 	{
@@ -14,14 +13,15 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include dirs relative to root folder (solution dir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "WhiteDonutEngine/vendor/GLFW/include"
+IncludeDir["Glad"] = "WhiteDonutEngine/vendor/Glad/include"
 
 include "WhiteDonutEngine/vendor/GLFW"
+include "WhiteDonutEngine/vendor/Glad"
 
 project "WhiteDonutEngine"
 	location "WhiteDonutEngine"
 	kind "SharedLib"
 	language "C++"
-	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -39,17 +39,20 @@ project "WhiteDonutEngine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 	
 	filter "system:windows"
 		cppdialect "C++17"
+		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -65,24 +68,23 @@ project "WhiteDonutEngine"
 	
 	filter "configurations:Debug"
 		defines "WDE_DEBUG"
-		runtime "Debug"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "WDE_RELEASE"
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "WDE_DIST"
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"
 		
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -106,6 +108,7 @@ project "Sandbox"
 	
 	filter "system:windows"
 		cppdialect "C++17"
+		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -115,15 +118,15 @@ project "Sandbox"
 	
 	filter "configurations:Debug"
 		defines "WDE_DEBUG"
-		runtime "Debug"
+		buildoptions "/MDd"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "WDE_RELEASE"
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "WDE_DIST"
-		runtime "Release"
+		buildoptions "/MD"
 		optimize "On"
